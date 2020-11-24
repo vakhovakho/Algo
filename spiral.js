@@ -1,14 +1,15 @@
-let n = 10;
+let m = 12;
+let n = 15;
 let a = [];
 let symbol = "*";
-for(let i = 0; i < n; i++) {
+for(let i = 0; i < m; i++) {
     a.push(new Array(n).fill(" "));
 }
 
 function toRight(a){
     let k = 0;
-    for(let i = 0; i < a.length/2; i+=2){
-        for(let j = k; j < a.length - k; j++){
+    for(let i = 0; i < m/2; i+=2){
+        for(let j = k; j < n - k; j++){
             a[i][j] = symbol;
         }
         k += 2;
@@ -17,8 +18,8 @@ function toRight(a){
 
 function toBottom(a){
     let k = 0;
-    for(let j = a.length - 1; j > a.length / 2; j = j - 2){
-        for(let i = 1 + k; i < a.length - k; i++){
+    for(let j = n - 1; j >= n / 2; j = j - 2){
+        for(let i = 1 + k; i < m - k; i++){
             a[i][j] = symbol;
         }
         k += 2;
@@ -27,8 +28,8 @@ function toBottom(a){
 
 function toLeft(a){
     let k = 0;
-    for(let i = a.length - 1; i > a.length/2; i= i - 2){
-        for(let j = a.length - 1 - k; j > k; j--){
+    for(let i = m - 1; i > m/2; i= i - 2){
+        for(let j = n - 1 - k; j > k; j--){
             a[i][j] = symbol;
         }
         k += 2;
@@ -37,8 +38,8 @@ function toLeft(a){
 
 function toTop(a){
     let k = 0;
-    for(let j = 1; j < a.length/2; j = j + 2){
-        for(let i = a.length - 2 - k; i >= k + 2; i--){
+    for(let j = 1; j < n/2; j = j + 2){
+        for(let i = m - 2 - k; i >= k + 2; i--){
             a[i][j] = symbol;
         }
         k += 2;
